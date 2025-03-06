@@ -11,10 +11,8 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Text('Login Screen!!!')
-        ],
+      body: Center(
+        child: Text('Login'),
       ),
     );
   }
