@@ -1,3 +1,5 @@
+import 'package:evernote_todo/auth/create_account.dart';
+import 'package:evernote_todo/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,21 +37,26 @@ class _AuthHomeState extends State<AuthHome> {
               children: [
                 Text(
                   'WELCOME TO EVERNOTE!',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.grey.shade400,
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.grey.shade400,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   'Work. School. Life.',
-                  style: GoogleFonts.lato(
-                      TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
+                  style: GoogleFonts.raleway(
+                      textStyle:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
                 ),
-                const Text(
+                Text(
                   'Remember everything',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                  style: GoogleFonts.raleway(
+                      textStyle:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
                 ),
                 const SizedBox(height: 16),
 
@@ -94,7 +101,10 @@ class _AuthHomeState extends State<AuthHome> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: InkWell(
-                        onTap: () {}, // Safely call callback if not null
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => CreateAccount()));
+                        }, // Safely call callback if not null
                         child: Container(
                           height: 35,
                           width: screenWidth * 0.4,
@@ -121,7 +131,10 @@ class _AuthHomeState extends State<AuthHome> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: InkWell(
-                        onTap: () {}, // Safely call callback if not null
+                        onTap: () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => Login()));
+                        }, // Safely call callback if not null
                         child: Container(
                           height: 35,
                           width: screenWidth * 0.4,
